@@ -10,14 +10,14 @@ class EndManager:
         self.end_intro_images = [load_and_scale(f'ASSET/END/END ({i}).png') for i in range(1, 3)]
         self.ending_loop_images = [load_and_scale(f'ASSET/END/end ({i}).png') for i in range(1, 21)]
 
-        self.state = 'won'         # 'won' -> 'intro' -> 'loop'
+        self.state = 'won'
         self.frame = 0
         self.frame_counter = 0
 
-        # You can tweak these values for animation smoothness
-        self.won_delay = 3          # frames per image (3 = ~50ms)
-        self.intro_delay = 20       # long pause between 2 intro frames
-        self.loop_delay = 2         # shorter = faster looping
+
+        self.won_delay = 3
+        self.intro_delay = 10
+        self.loop_delay = 2
 
         self.sound_played = False
 

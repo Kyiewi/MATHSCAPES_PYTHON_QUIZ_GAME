@@ -1,7 +1,6 @@
-### main.py
 import sys
 import pygame
-from game_manager import GameManager
+from managers.game_manager import GameManager
 
 pygame.init()
 pygame.mixer.init()

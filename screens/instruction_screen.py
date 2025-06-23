@@ -1,4 +1,3 @@
-### screens/instruction_screen.py
 import pygame
 from utils import load_and_scale
 

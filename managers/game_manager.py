@@ -1,17 +1,14 @@
-import sys
-import pygame
-from utils import load_and_scale
-from home_screen               import HomeManager
-from menu_manager              import MenuManager
-from level_manager             import LevelManager
-from easy_quiz_manager         import EasyQuizManager
-from moderate_quiz_manager     import ModerateQuizManager
-from hard_quiz_manager         import HardQuizManager
-from about_screen      import AboutScreen
-from instruction_screen import InstructionScreen
-from quit_screen       import QuitManager
-from end_manager               import EndManager
-from loading_manager           import LoadingManager
+from screens.home_screen            import HomeManager
+from managers.menu_manager          import MenuManager
+from managers.level_manager         import LevelManager
+from levels.easy_quiz_manager       import EasyQuizManager
+from levels.moderate_quiz_manager   import ModerateQuizManager
+from levels.hard_quiz_manager       import HardQuizManager
+from screens.about_screen           import AboutScreen
+from screens.instruction_screen     import InstructionScreen
+from screens.quit_screen            import QuitManager
+from managers.end_manager           import EndManager
+from managers.loading_manager       import LoadingManager
 
 class GameManager:
     def __init__(self, screen, click_sound, correct_sound, wrong_sound, end_sound):
@@ -122,6 +119,7 @@ class GameManager:
         if self.state in ("easy_quiz", "moderate_quiz", "hard_quiz"):
             result = self.quiz.update()
             if result == "end":
+                self.end = EndManager(self.screen, self.end_sound)
                 self.state = "end"
             return
 

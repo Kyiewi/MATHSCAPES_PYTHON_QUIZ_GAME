@@ -14,16 +14,11 @@ class LevelManager:
 
     def handle_event(self, event):
         if event.type == pygame.KEYDOWN:
-            key_name = pygame.key.name(event.key)
-            print(f"[LevelManager] KeyDown: {key_name}")
             if event.key == pygame.K_e:
-                print("[LevelManager] → easy_quiz")
                 return "easy_quiz"
             elif event.key == pygame.K_m:
-                print("[LevelManager] → moderate_quiz")
                 return "moderate_quiz"
             elif event.key == pygame.K_h:
-                print("[LevelManager] → hard_quiz")
                 return "hard_quiz"
         return None
 

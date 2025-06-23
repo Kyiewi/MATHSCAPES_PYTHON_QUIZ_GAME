@@ -1,4 +1,3 @@
-### screens/quit_screen.py
 import sys
 import pygame
 from utils import load_and_scale
